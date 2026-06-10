@@ -19,6 +19,9 @@ export const Header = () => {
           About
         </a>
         <a href="" className="hover:font-medium">
+          Projects
+        </a>
+        <a href="" className="hover:font-medium">
           Contact
         </a>
       </nav>

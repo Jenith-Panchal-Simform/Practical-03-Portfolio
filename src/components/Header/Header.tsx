@@ -28,10 +28,13 @@ export const Header = () => {
 
       {/* links */}
       <nav className="flex gap-5">
-        <a href="">
+        <a
+          href="https://www.linkedin.com/in/jenith-panchal-432b37237"
+          target="_blank"
+        >
           <img src={linkedInLogo} alt="LinkedIn Logo" className="h-10 w-10 " />
         </a>
-        <a href="">
+        <a href="https://github.com/Jenith-Panchal-Simform/" target="_blank">
           <img src={github} alt="LinkedIn Logo" className="h-10 w-10 " />
         </a>
       </nav>

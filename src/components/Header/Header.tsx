@@ -1,8 +1,9 @@
 import linkedInLogo from "../../assets/linkedIn.png";
 import github from "../../assets/github.png";
+
 export const Header = () => {
   return (
-    <header className="w-full flex-1 text-white p-5 flex justify-between items-center">
+    <header className="w-full flex-1 text-white p-5 px-20 flex justify-between items-center">
       {/* name/logo */}
       <div className="flex items-baseline">
         <h1 className="text-3xl font-bold">Jenith</h1>

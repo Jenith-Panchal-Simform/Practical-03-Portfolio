@@ -1,13 +1,91 @@
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+
+type formData = {
+  name: string;
+  email: string;
+  contact: string;
+  message: string;
+};
 export const ContactForm = () => {
+  const [formData, setFormData] = useState<formData>({
+    name: "",
+    email: "",
+    contact: "",
+    message: "",
+  });
+  const [error, setError] = useState<string>("");
+
+  const mobileRegex = /^[6-9]\d{9}$/;
+
+  const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+
+    if (!/^\d*$/.test(value)) return;
+
+    setFormData((prev) => ({
+      ...prev,
+      contact: value,
+    }));
+
+    if (value.length === 0) {
+      setError("");
+    } else if (value.length < 10) {
+      setError("Mobile number must be 10 digits");
+    } else if (value.length > 10) {
+      setError("Mobile number cannot exceed 10 digits");
+    } else if (!mobileRegex.test(value)) {
+      setError("Invalid mobile number");
+    } else {
+      setError("");
+    }
+  };
+
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (
+      formData.name.trim() == "" ||
+      formData.email.trim() == "" ||
+      formData.message.trim() == ""
+    ) {
+      setError("Field can not be empty");
+      return;
+    }
+    if (error) {
+      return;
+    }
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formData,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      );
+
+      alert("Email sent!");
+
+      setFormData({
+        name: "",
+        email: "",
+        contact: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-    <form className="w-2/3 mx-auto">
+    <form className="w-2/3 mx-auto" onSubmit={handleSubmit}>
       <div className="relative z-0 w-full mb-5 group">
         <input
           type="text"
           name="name"
           id="name"
           className="block py-2.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
-          placeholder=" "
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           required
         />
         <label
@@ -23,7 +101,8 @@ export const ContactForm = () => {
           name="email"
           id="email"
           className="block py-2.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
-          placeholder=" "
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           required
         />
         <label
@@ -35,11 +114,12 @@ export const ContactForm = () => {
       </div>
       <div className="relative z-0 w-full mb-5 group">
         <input
-          type="contact"
+          type="text"
           name="contact"
           id="contact"
           className="block py-2.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer"
-          placeholder=" "
+          value={formData.contact}
+          onChange={handleContactChange}
           required
         />
         <label
@@ -48,6 +128,7 @@ export const ContactForm = () => {
         >
           Contact no.
         </label>
+        <span className="text-red-500">{error ? error : ""}</span>
       </div>
       <div className="relative z-0 w-full mb-5 group">
         <textarea
@@ -55,8 +136,11 @@ export const ContactForm = () => {
           id="message"
           className="block py-2.5 px-0 w-full text-sm text-heading bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-brand peer resize-none"
           rows={5}
-          placeholder=" "
           required
+          value={formData.message}
+          onChange={(e) =>
+            setFormData({ ...formData, message: e.target.value })
+          }
         ></textarea>
         <label
           htmlFor="message"

@@ -2,7 +2,10 @@ import { ProjectCard } from "./ProjectCard";
 
 export const Projects = () => {
   return (
-    <section className="text-white flex-5 flex flex-col py-20 px-20 gap-20">
+    <section
+      className="text-white flex-5 flex flex-col py-20 px-20 gap-20"
+      id="projects"
+    >
       {/* project title */}
       <div className="flex flex-col gap-5">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-[#A6BBCC]">

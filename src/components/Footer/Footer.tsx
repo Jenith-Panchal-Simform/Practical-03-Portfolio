@@ -3,7 +3,7 @@ import github from "../../assets/github.png";
 
 export const Footer = () => {
   return (
-    <footer className="w-full flex-1 text-white p-5 px-20 flex justify-between items-center">
+    <footer className="w-full flex-1 border-t-2 border-white text-white p-5 px-20 flex justify-between items-center">
       {/* name/logo */}
       <div className="flex items-baseline">
         <h1 className="text-3xl font-bold">Jenith</h1>

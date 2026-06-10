@@ -15,7 +15,7 @@ export const Home = () => {
       <div className=" border border-[#A6BBCC] rounded-xl  aspect-square w-1/3">
         {/* image */}
         <img
-          src="https://th.bing.com/th/id/OIP.zsu9Q2fgwEFCjJ0jYcOSIAHaE8?w=251&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+          src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
           alt="Profile Photo"
           className="h-full w-full object-cover rounded-xl"
         />

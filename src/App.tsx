@@ -9,10 +9,12 @@ function App() {
   return (
     <div className="bg-gray-950">
       <Header />
-      <Home />
-      <About />
-      <Projects />
-      <Contact />
+      <main>
+        <Home />
+        <About />
+        <Projects />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );

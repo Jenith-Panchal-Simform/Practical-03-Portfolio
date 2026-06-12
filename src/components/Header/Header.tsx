@@ -1,5 +1,5 @@
-import linkedInLogo from "../../assets/linkedIn.png";
-import github from "../../assets/github.png";
+import linkedInLogo from "/images/linkedIn.png";
+import github from "/images/github.png";
 
 export const Header = () => {
   return (

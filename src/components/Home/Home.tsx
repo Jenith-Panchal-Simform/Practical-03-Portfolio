@@ -1,6 +1,8 @@
+import profile from "../../../public/images/profile.jpeg";
+
 export const Home = () => {
   return (
-    <main
+    <section
       className="flex text-white py-20 px-10 justify-around items-center"
       id="home"
     >
@@ -15,11 +17,11 @@ export const Home = () => {
       <div className=" border border-[#A6BBCC] rounded-xl  aspect-square w-1/3">
         {/* image */}
         <img
-          src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+          src={profile}
           alt="Profile Photo"
           className="h-full w-full object-cover rounded-xl"
         />
       </div>
-    </main>
+    </section>
   );
 };

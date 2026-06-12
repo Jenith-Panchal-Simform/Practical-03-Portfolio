@@ -1,9 +1,9 @@
 import { ProjectCard } from "./ProjectCard";
-import duckhunt from "../../assets/duckhunt.png";
-import codetogether from "../../assets/codetogether.jpeg";
-import sudoku from "../../assets/sudoku.jpeg";
-import tictactoe from "../../assets/tictactoe.jpeg";
-import repoboot from "../../assets/repo-boot.png";
+import duckhunt from "/images/projects/duckhunt.png";
+import codetogether from "/images/projects/codetogether.jpeg";
+import sudoku from "/images/projects/sudoku.jpeg";
+import tictactoe from "/images/projects/tictactoe.jpeg";
+import repoboot from "/public/images/projects/repo-boot.png";
 
 export const Projects = () => {
   return (
@@ -17,10 +17,11 @@ export const Projects = () => {
           projects
         </h1>
         <p className="text-xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-          reiciendis aut repellendus corporis ipsa nesciunt vero ipsam at atque
-          modi? Saepe accusamus quae, sed quos voluptate nam cumque nihil qui.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Here are some of the projects I have developed to apply and strengthen
+          my skills in full-stack development, problem-solving, and software
+          engineering. These projects reflect my hands-on experience with modern
+          technologies and my ability to build practical, user-focused
+          solutions.
         </p>
       </div>
       {/* project cards */}

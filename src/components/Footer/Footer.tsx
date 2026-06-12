@@ -15,10 +15,15 @@ export const Footer = () => {
         <a
           href="https://www.linkedin.com/in/jenith-panchal-432b37237"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img src={linkedInLogo} alt="LinkedIn Logo" className="h-10 w-10 " />
         </a>
-        <a href="https://github.com/Jenith-Panchal-Simform/" target="_blank">
+        <a
+          href="https://github.com/Jenith-Panchal-Simform/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src={github} alt="LinkedIn Logo" className="h-10 w-10 " />
         </a>
       </nav>

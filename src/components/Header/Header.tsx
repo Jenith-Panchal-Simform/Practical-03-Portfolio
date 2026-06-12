@@ -7,7 +7,7 @@ export const Header = () => {
       {/* name/logo */}
       <div className="flex items-baseline">
         <h1 className="text-3xl font-bold">Jenith</h1>
-        <h2 className="text-2xl font-bold   ">Panchal</h2>
+        <h2 className="text-2xl font-bold">Panchal</h2>
       </div>
 
       {/* navidgations */}
@@ -31,10 +31,15 @@ export const Header = () => {
         <a
           href="https://www.linkedin.com/in/jenith-panchal-432b37237"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img src={linkedInLogo} alt="LinkedIn Logo" className="h-10 w-10 " />
         </a>
-        <a href="https://github.com/Jenith-Panchal-Simform/" target="_blank">
+        <a
+          href="https://github.com/Jenith-Panchal-Simform/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src={github} alt="LinkedIn Logo" className="h-10 w-10 " />
         </a>
       </nav>

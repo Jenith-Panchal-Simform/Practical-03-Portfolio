@@ -25,11 +25,10 @@ export const Projects = () => {
       </div>
       {/* project cards */}
 
-      <div className="flex flex-wrap gap-5">
+      <ul className="flex flex-wrap gap-5">
         <ProjectCard
           imageURL={duckhunt}
-          desc="Developed a classic Duck Hunt-style game featuring smooth gameplay, responsive controls, and real-time target tracking. Implemented GPU acceleration using transform operations to optimize rendering performance and deliver a seamless gaming experience.
-"
+          desc="Developed a classic Duck Hunt-style game featuring smooth gameplay, responsive controls, and real-time target tracking. Implemented GPU acceleration using transform operations to optimize rendering performance and deliver a seamless gaming experience."
         />
         <ProjectCard
           imageURL={codetogether}
@@ -47,7 +46,7 @@ export const Projects = () => {
           imageURL={repoboot}
           desc="Developed and published Repo Boot, an npm package built with TypeScript to automate repository setup and eliminate repetitive project initialization tasks. The tool instantly generates a README.md file and a GitHub Pull Request template, helping developers bootstrap new projects with a single command."
         />
-      </div>
+      </ul>
     </section>
   );
 };

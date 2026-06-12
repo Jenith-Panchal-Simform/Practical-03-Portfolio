@@ -11,7 +11,7 @@ export const Contact = () => {
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-[#A6BBCC]">
           contact me
         </h1>
-        <p className="text-xl mx-auto">How can I help?</p>
+        <p className="text-xl mx-auto">Get In Touch</p>
       </div>
 
       {/* contactme form */}
